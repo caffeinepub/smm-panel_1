@@ -77,7 +77,7 @@ function StatusBadge({ status }: { status: OrderStatus }) {
   );
 }
 
-const UPI_ID = "smmadmin@ybl";
+const UPI_ID = "8825245372-13c6@ibl";
 
 function DepositDialog() {
   const [amount, setAmount] = useState("");
@@ -93,7 +93,7 @@ function DepositDialog() {
     }
     try {
       await deposit.mutateAsync(val);
-      toast.success(`$${val.toFixed(2)} added to your balance!`);
+      toast.success(`₹${val.toFixed(2)} added to your balance!`);
       setAmount("");
       setOpen(false);
     } catch {
@@ -133,7 +133,7 @@ function DepositDialog() {
         </DialogHeader>
         <div className="space-y-3 py-2">
           <div className="space-y-1.5">
-            <Label htmlFor="deposit-amount">Amount (USD)</Label>
+            <Label htmlFor="deposit-amount">Amount (INR)</Label>
             <Input
               id="deposit-amount"
               type="number"
@@ -153,7 +153,7 @@ function DepositDialog() {
                 onClick={() => setAmount(preset.toString())}
                 className="flex-1 py-1.5 text-xs font-medium rounded-md border border-primary/20 text-primary hover:bg-primary/5 transition-colors"
               >
-                ${preset}
+                ₹{preset}
               </button>
             ))}
           </div>
